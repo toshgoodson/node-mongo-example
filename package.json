@@ -1,0 +1,27 @@
+{
+  "name": "messagelog",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Leave a message for later",
+  "main": "app.js",
+  "dependencies": {
+    "express": "3.2.5",
+    "jade": "*"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toshgoodson/node-mongo-example.git"
+  },
+  "keywords": [
+    "node",
+    "mongo"
+  ],
+  "author": "Tosh Goodson",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/toshgoodson/node-mongo-example/issues"
+  }
+}
