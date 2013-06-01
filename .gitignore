@@ -1,3 +1,6 @@
+# Javascript files
+*.js
+
 # MongoDB executables that I'll be using
 /mongodb/
 
