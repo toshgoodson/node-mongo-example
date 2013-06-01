@@ -1,1 +1,9 @@
+# MongoDB executables that I'll be using
 /mongodb/
+
+# Node modules
+/node_modules/
+
+# Sublime project, workspace
+*.sublime-project
+*.sublime-workspace
