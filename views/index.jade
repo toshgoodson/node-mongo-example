@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+	h1.logo Message Log
+		small Leave a note for later
+	form#message(method='post', action='/post').form-inline
+		input(type='text', name='author', placeholder='Name').span2
+		input(type='text', name='message', placeholder='Message').span4
+		button.btn.btn-primary Post
+
+block scripts
+	script(src='/javascripts/libraries/jquery.js')
