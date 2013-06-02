@@ -5,9 +5,11 @@
 
 express = require 'express' 
 routes = require './routes' 
-user = require './routes/user' 
+user = require './routes/user'
+post = require './routes/post'  
 http = require 'http' 
 path = require 'path'
+mongoose = require 'mongoose'
 
 app = express()
 
@@ -22,11 +24,14 @@ app.use express.methodOverride()
 app.use app.router
 app.use express.static path.join __dirname, 'public'
 
+mongoose.connect 'mongodb://localhost/messagelog'
+
 # development only
 if 'development' == app.get 'env'
 	app.use express.errorHandler()
 
 app.get '/', routes.index
 app.get '/users', user.list
+app.post '/post', post.index
 
 http.createServer(app).listen app.get('port'), -> console.log 'Express server listening on port ' + app.get('port')
