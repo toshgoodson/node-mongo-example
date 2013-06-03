@@ -6,7 +6,8 @@
 express = require 'express' 
 routes = require './routes' 
 user = require './routes/user'
-post = require './routes/post'  
+post = require './routes/post'
+list = require './routes/list'  
 http = require 'http' 
 path = require 'path'
 mongoose = require 'mongoose'
@@ -33,5 +34,6 @@ if 'development' == app.get 'env'
 app.get '/', routes.index
 app.get '/users', user.list
 app.post '/post', post.index
+app.post '/list', list.index
 
 http.createServer(app).listen app.get('port'), -> console.log 'Express server listening on port ' + app.get('port')

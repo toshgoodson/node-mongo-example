@@ -3,10 +3,18 @@ extends layout
 block content
 	h1.logo Message Log
 		small Leave a note for later
-	form#message(method='post', action='/post').form-inline
-		input(type='text', name='author', placeholder='Name').span2
-		input(type='text', name='message', placeholder='Message').span4
-		button.btn.btn-primary Post
+	form(method='post', action='/post')#post-form.form-inline
+		input(type='text', name='author', placeholder='Name', required='required').span2
+		input(type='text', name='body', placeholder='Message', required='required').span4
+		button#submit.btn.btn-primary(type='submit') Post
+	p#response
+	section.section-two
+		h2.inline Retrieve messages from 
+		form(method='post', action='/list')#list-form.form-inline.inline
+			input(type='text', name='author', placeholder='Name', required='required').span2
+			button.btn.btn-primary(type='submit') Go
+		div#message-list
 
 block scripts
-	script(src='/javascripts/libraries/jquery.js')
+	script(src='/javascripts/libraries/jquery.min.js')
+	script(src='/javascripts/main.js')

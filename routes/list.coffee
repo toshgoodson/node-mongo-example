@@ -8,7 +8,5 @@ exports.index = (req, res) ->
 	#console.log req.body.author
 	# test
 	messageModel = require '../models/message.js'
-	message = new messageModel.Message({ author: req.body.author, body: req.body.body })
-	message.save (err, message) -> if err then console.log "Error saving message!"
-
-	res.send 200
+	messageModel.Message.find { author: req.body.author }, 'author body date', (err, messages) ->
+		res.json 200, messages
