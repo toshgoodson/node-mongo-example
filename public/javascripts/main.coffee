@@ -40,7 +40,9 @@ messageView = $ '#message-list'
 buildMessageHtml = (message) ->
 	# date = new Date(Date.parse message.date) 
 	# dateTimeString = date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
-	return '<div class="row-fluid btn"><div class="span2">'+message.author+'</div><div class="span6">'+message.body+'</div><div class="span4">'+Date(message.date)+'</div></div>'
+	timestamp = Date.parse message.date
+	date = new Date timestamp
+	return '<div class="row-fluid btn"><div class="span2">'+message.author+'</div><div class="span6">'+message.body+'</div><div class="span4">'+date+'</div></div>'
 
 buildEmptyHtml = ->
 	# date = new Date(Date.parse message.date) 
